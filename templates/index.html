@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Comments from telegramm
+{% endblock %}
+
+
+{% block body %}
+<div class = 'container mt-5'>
+    <h1>Comments from last posts on telegramm channel "name channel"</h1>
+    {% for article in posts %}
+    <div class="alert alert-info">
+        <h2>Дата: {{article['data']}}</h2>
+        <p>Пользователь: {{article['user']}}</p>
+        <p><b>Текст комментария: {{article['text']}}</b></p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
